@@ -1,1 +1,5 @@
 ignore
+.env
+vendor
+composer.json
+composer.lock
