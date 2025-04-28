@@ -15,9 +15,13 @@ class TodoDAO
         VALUES
         (:todo, :status, :user_id)");
 
-        $sql->bindParam(":todo", $todo->getTodo());
-        $sql->bindParam(":status", $todo->getStatus());
-        $sql->bindParam(":user_id", $todo->getUserId());
+        $_todo = $todo->getTodo();
+        $status = $todo->getStatus();
+        $user_id = $todo->getUserId();
+
+        $sql->bindParam(":todo", $_todo);
+        $sql->bindParam(":status", $status);
+        $sql->bindParam(":user_id", $user_id);
 
         $sql->execute();
     }
