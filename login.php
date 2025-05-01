@@ -24,7 +24,7 @@ $login = $_GET["login"] ?? false;
             <?php if ($login === "true"): ?>
                 <div class="login-container">
                     <h2>Login</h2>
-                    <form action="POST">
+                    <form method="POST">
                         <div class="form-input">
                             <label for="username">Nome de usuário:</label>
                             <br>
@@ -50,7 +50,7 @@ $login = $_GET["login"] ?? false;
             <?php elseif ($login == "false"): ?>
                 <div class="signup-container">
                     <h2>Registrar-se</h2>
-                    <form action="POST">
+                    <form method="POST">
                         <div class="form-input">
                             <label for="username">Nome de usuário:</label>
                             <br>
