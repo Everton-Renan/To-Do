@@ -37,7 +37,7 @@ input {
     cursor: pointer;
     text-decoration: underline;
     color: #FBF8EF;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .button button {
@@ -45,6 +45,7 @@ input {
     border-radius: 20px;
     border-color: transparent;
     color: #FBF8EF;
+    margin-top: 1rem;
 }
 
 .button button:hover,
