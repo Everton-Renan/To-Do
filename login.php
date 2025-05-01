@@ -1,0 +1,82 @@
+<?php
+if (!isset($_GET["login"])) {
+    $_GET["login"] = true;
+}
+$login = $_GET["login"] ?? false;
+?>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/login/style.css">
+    <title>To-Do List</title>
+</head>
+
+<body>
+    <header>
+        <h1>To-Do List</h1>
+    </header>
+    <main>
+        <div class="container-form">
+            <?php if ($login === "true"): ?>
+                <div class="login-container">
+                    <h2>Login</h2>
+                    <form action="POST">
+                        <div class="form-input">
+                            <label for="username">Nome de usuário:</label>
+                            <br>
+                            <input type="text" name="username" id="username" maxlength="30">
+                        </div>
+
+                        <div class="form-input">
+                            <label for="password">Senha:</label>
+                            <br>
+                            <input type="password" name="password" id="password">
+                        </div>
+
+                        <form action="login.php" method="GET">
+                            <input type="hidden" name="login" value="false">
+                            <input class="btn" type="submit" value="Registrar-se">
+                        </form>
+
+                        <div class="form-input button">
+                            <button type="submit">Registrar</button>
+                        </div>
+                    </form>
+                </div>
+
+            <?php elseif ($login == "false"): ?>
+                <div class="signup-container">
+                    <h2>Registrar-se</h2>
+                    <form action="POST">
+                        <div class="form-input">
+                            <label for="username">Nome de usuário:</label>
+                            <br>
+                            <input type="text" name="username" id="username" maxlength="30">
+                        </div>
+
+                        <div class="form-input">
+                            <label for="password">Senha:</label>
+                            <br>
+                            <input type="password" name="password" id="password">
+                        </div>
+
+                        <form action="login.php" method="GET">
+                            <input type="hidden" name="login" value="true">
+                            <input class="btn" type="submit" value="Login">
+                        </form>
+
+                        <div class="form-input button">
+                            <button type="submit">Registrar</button>
+                        </div>
+                    </form>
+                </div>
+            <?php endif; ?>
+        </div>
+    </main>
+</body>
+
+</html>
