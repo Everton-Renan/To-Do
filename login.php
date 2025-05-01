@@ -37,14 +37,13 @@ $login = $_GET["login"] ?? false;
                             <input type="password" name="password" id="password">
                         </div>
 
-                        <form action="login.php" method="GET">
-                            <input type="hidden" name="login" value="false">
-                            <input class="btn" type="submit" value="Registrar-se">
-                        </form>
-
                         <div class="form-input button">
                             <button type="submit">Registrar</button>
                         </div>
+                    </form>
+                    <form action="login.php" method="GET">
+                        <input type="hidden" name="login" value="false">
+                        <input class="btn" type="submit" value="Registrar-se">
                     </form>
                 </div>
 
@@ -63,15 +62,14 @@ $login = $_GET["login"] ?? false;
                             <br>
                             <input type="password" name="password" id="password">
                         </div>
-
-                        <form action="login.php" method="GET">
-                            <input type="hidden" name="login" value="true">
-                            <input class="btn" type="submit" value="Login">
-                        </form>
-
                         <div class="form-input button">
                             <button type="submit">Registrar</button>
                         </div>
+                    </form>
+
+                    <form action="login.php" method="GET">
+                        <input type="hidden" name="login" value="true">
+                        <input class="btn" type="submit" value="Login">
                     </form>
                 </div>
             <?php endif; ?>
