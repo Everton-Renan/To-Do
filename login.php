@@ -25,6 +25,7 @@ $login = $_GET["login"] ?? false;
                 <div class="login-container">
                     <h2>Login</h2>
                     <form action="login_process.php" method="POST">
+                        <input type="hidden" name="auth-mode" value="login">
                         <div class="form-input">
                             <label for="username">Nome de usuário:</label>
                             <br>
@@ -51,6 +52,7 @@ $login = $_GET["login"] ?? false;
                 <div class="signup-container">
                     <h2>Registrar-se</h2>
                     <form action="login_process.php" method="POST">
+                        <input type="hidden" name="auth-mode" value="signup">
                         <div class="form-input">
                             <label for="username">Nome de usuário:</label>
                             <br>
