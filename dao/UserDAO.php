@@ -33,4 +33,16 @@ class UserDAO
 
         return $sql->fetch();
     }
+
+    public function getUserByUsername(string $username)
+    {
+        $sql = $this->conn->prepare(
+            "SELECT * FROM users WHERE username = :username"
+        );
+
+        $sql->bindParam(":username", $username);
+        $sql->execute();
+
+        return $sql->fetch();
+    }
 }
