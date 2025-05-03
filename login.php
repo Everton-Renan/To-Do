@@ -20,6 +20,9 @@ $login = $_GET["login"] ?? false;
         <h1>To-Do List</h1>
     </header>
     <main>
+        <?php
+        require "partials/show_message.php";
+        ?>
         <div class="container-form">
             <?php if ($login === "true"): ?>
                 <div class="login-container">
