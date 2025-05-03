@@ -29,13 +29,13 @@ if ($authMode === "signup") {
     if (!$userDao->getUserByUsername($user->getUsername())) {
         $userDao->create($user);
 
-        $msg->setUrl($BASE_URL . "/login.php?login=true");
+        $msg->setUrl($BASE_URL . "login.php?login=true");
         $msg->setType("success");
         $msg->setMessage("Usuário criado com sucesso.");
         $msg->executeMessage();
     } else {
 
-        $msg->setUrl($BASE_URL . "/login.php?login=false");
+        $msg->setUrl($BASE_URL . "login.php?login=false");
         $msg->setType("error");
         $msg->setMessage("O usuário já existe.");
         $msg->executeMessage();
@@ -46,7 +46,7 @@ if ($authMode === "signup") {
     if ($user) {
         if ($user["username"] !== $username) {
 
-            $msg->setUrl($BASE_URL . "/login.php?login=true");
+            $msg->setUrl($BASE_URL . "login.php?login=true");
             $msg->setType("error");
             $msg->setMessage("Usuário e/ou Senha Incorretos.");
             $msg->executeMessage();
@@ -54,7 +54,7 @@ if ($authMode === "signup") {
 
         if (!password_verify($password, $user["password"])) {
 
-            $msg->setUrl($BASE_URL . "/login.php?login=true");
+            $msg->setUrl($BASE_URL . "login.php?login=true");
             $msg->setType("error");
             $msg->setMessage("Usuário e/ou Senha Incorretos.");
             $msg->executeMessage();
@@ -66,13 +66,13 @@ if ($authMode === "signup") {
 
         $_SESSION["authenticated"] = true;
 
-        $msg->setUrl($BASE_URL . "/index.php");
+        $msg->setUrl($BASE_URL . "index.php");
         $msg->setType("success");
         $msg->setMessage("Login concluído com sucesso.");
         $msg->executeMessage();
     } else {
 
-        $msg->setUrl($BASE_URL . "/login.php?login=true");
+        $msg->setUrl($BASE_URL . "login.php?login=true");
         $msg->setType("error");
         $msg->setMessage("Usuário não encontrado.");
         $msg->executeMessage();
