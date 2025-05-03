@@ -2,7 +2,11 @@
 
 require_once "load_dotenv.php";
 require_once "models/User.php";
+require_once "models/Message.php";
 require_once "dao/UserDAO.php";
+require_once "utils.php";
+
+$BASE_URL = getBaseUrl("login_process.php");
 
 $authMode = $_POST["auth-mode"];
 $username = filter_input(INPUT_POST, "username");
@@ -16,30 +20,61 @@ $passwordDB = $_SERVER["DB_PASSWORD"];
 $conn = new PDO("mysql:host=$host;dbname=$db", $userDB, $passwordDB);
 $userDao = new UserDAO($conn);
 
+$msg = new Message();
+
 if ($authMode === "signup") {
     $user = new User($username, $password);
     $user->encryptPassword(PASSWORD_ARGON2ID);
 
     if (!$userDao->getUserByUsername($user->getUsername())) {
         $userDao->create($user);
-        // Send success message "Usuário criado com sucesso and redirect to the login page"
+
+        $msg->setUrl($BASE_URL . "/login.php?login=true");
+        $msg->setType("success");
+        $msg->setMessage("Usuário criado com sucesso.");
+        $msg->executeMessage();
     } else {
-        // Send error message "O usuário já existe and redirect to the login page"
+
+        $msg->setUrl($BASE_URL . "/login.php?login=false");
+        $msg->setType("error");
+        $msg->setMessage("O usuário já existe.");
+        $msg->executeMessage();
     }
 } else if ($authMode == "login") {
     $user = $userDao->getUserByUsername($username);
 
     if ($user) {
         if ($user["username"] !== $username) {
-            // Send error message "Usuário e/ou Senha incorreto and redirect to the login page
+
+            $msg->setUrl($BASE_URL . "/login.php?login=true");
+            $msg->setType("error");
+            $msg->setMessage("Usuário e/ou Senha Incorretos.");
+            $msg->executeMessage();
         }
 
         if (!password_verify($password, $user["password"])) {
-            // Send error message "Usuário e/ou Senha incorreto and redirect to the login page"
+
+            $msg->setUrl($BASE_URL . "/login.php?login=true");
+            $msg->setType("error");
+            $msg->setMessage("Usuário e/ou Senha Incorretos.");
+            $msg->executeMessage();
+        }
+
+        if (session_status() === PHP_SESSION_DISABLED) {
+            session_start();
         }
 
         $_SESSION["authenticated"] = true;
+
+        $msg->setUrl($BASE_URL . "/index.php");
+        $msg->setType("success");
+        $msg->setMessage("Login concluído com sucesso.");
+        $msg->executeMessage();
     } else {
-        // Send error message "Usuário não encontrado and redirect to the login page"
+
+        $msg->setUrl($BASE_URL . "/login.php?login=true");
+        $msg->setType("error");
+        $msg->setMessage("Usuário não encontrado.");
+        $msg->executeMessage();
     }
 }
