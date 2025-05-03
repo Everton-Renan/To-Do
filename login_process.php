@@ -60,12 +60,11 @@ if ($authMode === "signup") {
             $msg->executeMessage();
         }
 
-        if (session_status() === PHP_SESSION_DISABLED) {
+        if (session_status() !== PHP_SESSION_ACTIVE) {
             session_start();
         }
 
         $_SESSION["authenticated"] = true;
-
         $msg->setUrl($BASE_URL . "index.php");
         $msg->setType("success");
         $msg->setMessage("Login concluído com sucesso.");
