@@ -28,3 +28,10 @@ function verify_authentication(): bool
 
     return false;
 }
+
+function formatDateBR(string $date): string
+{
+    $new_date = strtotime($date);
+    $date_formated = date("d/m/Y H:i:s", $new_date);
+    return $date_formated;
+}
