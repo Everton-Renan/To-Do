@@ -39,7 +39,7 @@ class TodoDAO
     public function getTodosByUserId(int $user_id)
     {
         $sql = $this->conn->prepare("SELECT * FROM todos WHERE
-         user_id = :user_id");
+         user_id = :user_id ORDER BY id DESC");
 
         $sql->bindParam(":user_id", $user_id);
         $sql->execute();
