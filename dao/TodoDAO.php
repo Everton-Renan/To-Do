@@ -67,4 +67,18 @@ class TodoDAO
         $sql->bindParam(":id", $id);
         $sql->execute();
     }
+
+    public function update(int $id, string $todo, int $status)
+    {
+        $sql = $this->conn->prepare("UPDATE todos
+        SET status = :status,
+        todo = :todo  
+        WHERE
+        id = :id");
+
+        $sql->bindParam(":id", $id);
+        $sql->bindParam(":todo", $todo);
+        $sql->bindParam(":status", $status);
+        $sql->execute();
+    }
 }
