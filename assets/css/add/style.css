@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #80CBC4;
+}
+
+header {
+    margin: 2%;
+    text-align: center;
+}
+
+h1 {
+    color: #FBF8EF;
+}
+
+label {
+    color: #FBF8EF;
+}
+
+input {
+    border-radius: 20px;
+    border-color: transparent;
+}
+
+.button button {
+    background-color: #FFB433;
+    border-radius: 20px;
+    border-color: transparent;
+    color: #FBF8EF;
+    margin-top: 1rem;
+}
+
+.button button:hover,
+input:hover {
+    box-shadow: 0 0 8px white;
+}
+
+#logout {
+    color: #FBF8EF;
+    text-decoration: none;
+}
+
+.container-form {
+    justify-items: center;
+    margin-top: 10%;
+}
