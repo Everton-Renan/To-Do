@@ -29,7 +29,6 @@ $userDB = $_SERVER["DB_USERNAME"];
 $passwordDB = $_SERVER["DB_PASSWORD"];
 
 $user_id = $_SESSION["user_id"];
-echo $user_id;
 
 $conn = new PDO("mysql:host=$host;dbname=$db", $userDB, $passwordDB);
 
