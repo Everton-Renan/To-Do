@@ -25,6 +25,11 @@ input {
     border-color: transparent;
 }
 
+#title {
+    color: #FBF8EF;
+    text-decoration: none;
+}
+
 .button button {
     background-color: #FFB433;
     border-radius: 20px;

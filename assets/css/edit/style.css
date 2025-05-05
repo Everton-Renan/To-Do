@@ -35,6 +35,10 @@ input[type="checkbox"] {
     height: 20px;
 }
 
+#title {
+    color: #FBF8EF;
+}
+
 #logout {
     color: #FBF8EF;
 }

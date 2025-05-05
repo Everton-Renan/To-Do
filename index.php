@@ -44,7 +44,7 @@ $result = $todoDao->getTodosByUserId($user_id);
 
 <body>
     <header>
-        <h1>To-Do List</h1>
+        <h1><a id="title" href="index.php">To-Do List</a></h1>
         <a id="logout" href="logout.php">Logout</a>
         <a id="add-todo" href="add.php">Adicionar Tarefa</a>
     </header>

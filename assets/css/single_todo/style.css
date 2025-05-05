@@ -30,6 +30,10 @@ a {
     text-decoration: none;
 }
 
+#title {
+    color: #FBF8EF;
+}
+
 #logout {
     color: #FBF8EF;
 }
