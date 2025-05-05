@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    margin: 2%;
+    text-align: center;
+}
+
+body {
+    background-color: #80CBC4;
+}
+
+h1 {
+    color: #FBF8EF;
+}
+
+label {
+    color: #FBF8EF;
+    font-size: 24px;
+}
+
+input {
+    border-radius: 20px;
+    border-color: transparent;
+}
+
+a {
+    text-decoration: none;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+#logout {
+    color: #FBF8EF;
+}
+
+#add-todo {
+    color: #FBF8EF;
+    margin-left: 0.8rem;
+}
+
+#status {
+    margin-top: 0.8rem;
+}
+
+.button button {
+    background-color: #FFB433;
+    border-radius: 20px;
+    border-color: transparent;
+    color: #FBF8EF;
+    margin-top: 1rem;
+}
+
+.button button:hover,
+input:hover {
+    box-shadow: 0 0 8px white;
+}
+
+.edit-container {
+    justify-items: center;
+    margin-top: 10%;
+}
