@@ -79,7 +79,7 @@ $result = $todoDao->getTodosByUserId($user_id);
                         <div class="icons">
                             <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
                             <a href="todo_process/completed.php?id=<?= $todo["id"] ?>"><i class="fa-solid fa-check"></i></a>
-                            <a href=""><i class="fa-solid fa-trash-can"></i></a>
+                            <a href="todo_process/remove.php?id=<?= $todo["id"] ?>"><i class="fa-solid fa-trash-can"></i></a>
                         </div>
                     </td>
                 </tr>
