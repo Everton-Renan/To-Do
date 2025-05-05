@@ -35,4 +35,15 @@ class TodoDAO
 
         return $sql->fetch();
     }
+
+    public function getTodosByUserId(int $user_id)
+    {
+        $sql = $this->conn->prepare("SELECT * FROM todos WHERE
+         user_id = :user_id");
+
+        $sql->bindParam(":user_id", $user_id);
+        $sql->execute();
+
+        return $sql->fetchAll();
+    }
 }
