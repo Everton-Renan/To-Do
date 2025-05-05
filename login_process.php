@@ -65,6 +65,8 @@ if ($authMode === "signup") {
         }
 
         $_SESSION["authenticated"] = true;
+        $_SESSION["user_id"] = $user["id"];
+
         $msg->setUrl($BASE_URL . "index.php");
         $msg->setType("success");
         $msg->setMessage("Login concluído com sucesso.");
