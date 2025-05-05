@@ -59,8 +59,9 @@ $todo = $todoDao->getTodoById($id);
 
     <main>
         <div class="edit-container">
-            <form action="" method="POST">
+            <form action="edit_process.php" method="POST">
                 <div id="form-inputs">
+                    <input type="hidden" name="id" value="<?= $todo["id"] ?>">
                     <label for="todo">Tarefa:</label>
                     <input type="text" name="todo" id="todo" required maxlength="200" placeholder="Digite o que você irá fazer" value="<?= $todo["todo"] ?>">
                     <br>
