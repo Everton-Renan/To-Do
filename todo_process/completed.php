@@ -16,7 +16,7 @@ require_once "../models/Message.php";
 $msg = new Message();
 $BASE_URL = getBaseUrl("todo_process/completed.php");
 
-if (!isset($_GET["id"])) {
+if (!isset($_GET["id"]) || !is_numeric($_GET["id"])) {
     $msg->setUrl($BASE_URL . "index.php");
     $msg->setType("error");
     $msg->setMessage("Algo deu errado, Por Favor, selecione novamente a tarefa");
