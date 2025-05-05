@@ -46,4 +46,15 @@ class TodoDAO
 
         return $sql->fetchAll();
     }
+
+    public function todoCompleted(int $id)
+    {
+        $sql = $this->conn->prepare("UPDATE todos
+        SET status = 1 
+        WHERE
+        id = :id");
+
+        $sql->bindParam(":id", $id);
+        $sql->execute();
+    }
 }
