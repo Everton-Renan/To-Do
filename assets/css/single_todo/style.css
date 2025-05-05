@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    margin-top: 1.5%;
+    text-align: center;
+}
+
+body {
+    background-color: #80CBC4;
+}
+
+main {
+    margin-top: 10%;
+    text-align: center;
+}
+
+h1,
+h2 {
+    color: #FBF8EF;
+}
+
+h2 {
+    margin-bottom: 0.4rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+#logout {
+    color: #FBF8EF;
+}
+
+#add-todo {
+    color: #FBF8EF;
+    margin-left: 0.8rem;
+}
