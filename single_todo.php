@@ -36,6 +36,21 @@ $id = filter_input(INPUT_GET, "id");
 $todoDao = new TodoDAO($conn);
 
 $todo = $todoDao->getTodoById($id);
+
+if ($todo == null) {
+    $msg->setUrl($BASE_URL . "index.php");
+    $msg->setType("error");
+    $msg->setMessage("A tarefa não foi encontrada.");
+    $msg->executeMessage();
+}
+
+if ($todo["user_id"] !== $user_id) {
+    $msg->setUrl($BASE_URL . "index.php");
+    $msg->setType("error");
+    $msg->setMessage("A tarefa não foi encontrada.");
+    $msg->executeMessage();
+}
+
 $date_formated = formatDateBR($todo["created_at"]);
 ?>
 
