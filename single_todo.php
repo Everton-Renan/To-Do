@@ -70,6 +70,7 @@ $date_formated = formatDateBR($todo["created_at"]);
         <h1><a id="title" href="index.php">To-Do List</a></h1>
         <br>
         <a id="logout" href="logout.php">Logout</a>
+        <a id="delete" href="delete.php">Deletar Conta</a>
         <a id="add-todo" href="add.php">Adicionar Tarefa</a>
     </header>
 

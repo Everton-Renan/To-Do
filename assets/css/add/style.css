@@ -48,6 +48,12 @@ input:hover {
     text-decoration: none;
 }
 
+#delete {
+    color: #FBF8EF;
+    margin-left: 0.8rem;
+    text-decoration: none;
+}
+
 .container-form {
     justify-items: center;
     margin-top: 10%;

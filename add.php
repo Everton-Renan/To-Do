@@ -25,6 +25,7 @@ if (verify_authentication() === false) {
         <h1><a id="title" href="index.php">To-Do List</a></h1>
         <br>
         <a id="logout" href="logout.php">Logout</a>
+        <a id="delete" href="delete.php">Deletar Conta</a>
     </header>
     <?php
     require "partials/show_message.php"
