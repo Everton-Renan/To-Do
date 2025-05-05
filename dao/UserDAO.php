@@ -45,4 +45,14 @@ class UserDAO
 
         return $sql->fetch();
     }
+
+    public function removeById(int $id)
+    {
+        $sql = $this->conn->prepare("DELETE FROM users
+        WHERE
+        id = :id");
+
+        $sql->bindParam(":id", $id);
+        $sql->execute();
+    }
 }
