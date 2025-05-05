@@ -8,6 +8,10 @@ require_once "utils.php";
 
 $BASE_URL = getBaseUrl("login_process.php");
 
+if (!isset($_POST["auth-mode"])) {
+    redirectLoginPage();
+}
+
 $authMode = $_POST["auth-mode"];
 $username = filter_input(INPUT_POST, "username");
 $password = filter_input(INPUT_POST, "password");
