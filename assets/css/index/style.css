@@ -1,0 +1,61 @@
+body {
+    background-color: #80CBC4;
+}
+
+header {
+    text-align: center;
+}
+
+table {
+    max-width: 700px;
+    background-color: #B4EBE6;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 20px;
+    border-collapse: separate;
+    border-spacing: 5rem 2rem;
+}
+
+tr {
+    color: #363636;
+}
+
+h1 {
+    color: #FBF8EF;
+}
+
+a {
+    color: #363636;
+    text-decoration: none;
+}
+
+#logout {
+    color: #FBF8EF;
+}
+
+.icons {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+i {
+    margin-left: 0.1rem;
+}
+
+#add-todo {
+    color: #FBF8EF;
+    margin-left: 0.8rem;
+}
+
+.font-awesome,
+.font-awesome a {
+    color: #FBF8EF;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.font-awesome a {
+    text-decoration: underline;
+}
