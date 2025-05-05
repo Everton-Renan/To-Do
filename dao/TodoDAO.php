@@ -57,4 +57,14 @@ class TodoDAO
         $sql->bindParam(":id", $id);
         $sql->execute();
     }
+
+    public function removeById(int $id)
+    {
+        $sql = $this->conn->prepare("DELETE FROM todos
+        WHERE
+        id = :id");
+
+        $sql->bindParam(":id", $id);
+        $sql->execute();
+    }
 }
