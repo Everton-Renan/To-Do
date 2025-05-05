@@ -66,18 +66,18 @@ $result = $todoDao->getTodosByUserId($user_id);
 
             <?php foreach ($result as $todo): ?>
                 <tr>
-                    <td><a href=""><?= $cont ?></a></td>
-                    <td><a href=""><?= $todo["todo"] ?></a></td>
+                    <td><a href="single_todo.php?id=<?= $todo["id"] ?>"><?= $cont ?></a></td>
+                    <td><a href="single_todo.php?id=<?= $todo["id"] ?>"><?= $todo["todo"] ?></a></td>
 
                     <?php if ($todo["status"] === 0): ?>
-                        <td><a href="">Pendente</a></td>
+                        <td><a href="single_todo.php?id=<?= $todo["id"] ?>">Pendente</a></td>
                     <?php elseif ($todo["status"] === 1): ?>
-                        <td><a href="">Concluído</a></td>
+                        <td><a href="single_todo.php?id=<?= $todo["id"] ?>">Concluído</a></td>
                     <?php endif; ?>
 
                     <td>
                         <div class="icons">
-                            <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a href="edit.php?id=<?= $todo["id"] ?>"><i class="fa-solid fa-pen-to-square"></i></a>
                             <a href="todo_process/completed.php?id=<?= $todo["id"] ?>"><i class="fa-solid fa-check"></i></a>
                             <a href="todo_process/remove.php?id=<?= $todo["id"] ?>"><i class="fa-solid fa-trash-can"></i></a>
                         </div>
