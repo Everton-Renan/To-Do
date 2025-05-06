@@ -32,13 +32,13 @@ $login = $_GET["login"] ?? false;
                         <div class="form-input">
                             <label for="username">Nome de usuário:</label>
                             <br>
-                            <input type="text" name="username" id="username" maxlength="30">
+                            <input required type="text" name="username" id="username" maxlength="30">
                         </div>
 
                         <div class="form-input">
                             <label for="password">Senha:</label>
                             <br>
-                            <input type="password" name="password" id="password">
+                            <input required type="password" name="password" id="password">
                         </div>
 
                         <div class="form-input button">
@@ -59,13 +59,13 @@ $login = $_GET["login"] ?? false;
                         <div class="form-input">
                             <label for="username">Nome de usuário:</label>
                             <br>
-                            <input type="text" name="username" id="username" maxlength="30">
+                            <input required type="text" name="username" id="username" maxlength="30">
                         </div>
 
                         <div class="form-input">
                             <label for="password">Senha:</label>
                             <br>
-                            <input type="password" name="password" id="password">
+                            <input required type="password" name="password" id="password">
                         </div>
                         <div class="form-input button">
                             <button type="submit">Registrar</button>
