@@ -15,5 +15,5 @@ Projeto de lista de tarefas desenvolvido com PHP e MariaDB.
 - MariaDB 10.4.32
 - HTML5, CSS3
 - Composer
-- [vlucas/phpdotenv](https://github.com/phpdotenv)
+- [vlucas/phpdotenv](https://github.com/vlucas/phpdotenv)
 - Git
