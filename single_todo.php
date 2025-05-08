@@ -77,7 +77,9 @@ $date_formated = formatDateBR($todo["created_at"]);
     <main>
         <div class="todo-container">
             <h2>ID: <?= $todo["id"] ?></h2>
-            <h2>Tarefa: <?= $todo["todo"] ?></h2>
+            <div id="todo">
+                <h2>Tarefa: <?= $todo["todo"] ?></h2>
+            </div>
             <?php if ($todo["status"] === 0): ?>
                 <h2>Status: Pendente</h2>
             <?php elseif ($todo["status"] === 1): ?>
