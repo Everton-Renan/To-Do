@@ -1,4 +1,4 @@
-#To-Do List
+# To-Do List
 
 Projeto de lista de tarefas desenvolvido com PHP e MariaDB.
 
